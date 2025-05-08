@@ -1,11 +1,7 @@
 main:
-  - title: "Posts"
-    url: /posts/
-  - title: "Categories"
-    url: /categories/
-  - title: "Tags"
-    url: /tags/
   - title: "About"
     url: /about/
   - title: "Case Studies"
     url: /case-studies/
+  - title: "Product Management"
+    url: /product-management/
