@@ -5,5 +5,5 @@ layout: single
 permalink: /case-studies/design-a-digital-library/
 author_profile: false
 ---
-problem : Most of the readers leave the book without completion.
+Problem : Most of the readers leave the book without completion, Or lose the notes they created after reading the book.
 
