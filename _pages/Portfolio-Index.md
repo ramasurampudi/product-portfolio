@@ -1,5 +1,5 @@
 ---
-title: "Portfolio-Index"
+title: "Portfolio Index"
 layout: single
 permalink: /Portfolio-Index/
 author_profile: true
