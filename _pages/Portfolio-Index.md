@@ -1,11 +1,10 @@
 ---
-title: "Portfolio Index"
+title: "Portfolio"
 layout: single
-permalink: /Portfolio-Index/
+permalink: /Portfolio/
 author_profile: true
 ---
-
-1. My view on "What is Product Management"
-2. Day to Day life as a product manager.
+My view on "What is Product Management"
+Day to Day life as a product manager.
 
 
