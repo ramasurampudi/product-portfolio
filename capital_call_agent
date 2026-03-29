@@ -22,6 +22,10 @@ Approvers: Business Team
 **Target Users**
   Fund Administrators (Users with the role # Administrator)
 
+**Application Context**
+1. The chat interface where users can enter their queries is already present.
+2. The needed infra to save the capital calls in draft status is already present.  
+
 **Requirements**
 AI agent capabilities
 1. Interpret queries shared in natural english language to,
