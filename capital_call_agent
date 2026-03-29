@@ -12,9 +12,60 @@ Approvers: Business Team
   In order to make sure the work is highly accurate, the industry follows a process called preparer-reviewer. Also known as maker-checker or four-eye-review. 
   A junior accountant will prepare the client deliverable (i.e., a capital call notice or financial statements) and a senior accountant will review before it is shared with client (i.e., fund manager).
   In couple of cases, even the reviewer will not have access to the client, and they share deliverables with someone in Investor relations team, who takes care of all client communications.
-
-**Problem Statement**
   Every fund accountant, irrespective of the role preparer or reviewer, handles atleast 5 - 10 funds depending upon the organziation.
   The volume of work, the context switching and different systems from which data must be segregated are some of the reasons that causes confusion and leads to errors in preparation of client deliverable (i.e., capital call or financial statements)
-  We want to build an AI Agent that can help preparers and reviewers in the capital call notice preparation and reduce the time-to-share the same with the client.
 
+**Objective**
+  Enable fund administrators to create capital call notices through a conversational AI interface, reducing manual effort to navigate across different screens and operational errors while ensuring that all calculations and allocations follow the platform’s existing business logic.
+  The AI agent acts as an instruction interpreter and workflow orchestrator, not as a decision-maker for financial calculations.
+
+**Target Users**
+  Fund Administrators (Users with the role # Administrator)
+
+**Requirements**
+AI agent capabilities
+1. Interpret queries shared in natural english language to,
+   a. Identify the intent of the user. 
+   b. Parse the required data from the given message.
+2. Clarify if the intent is not clear or something that was asked is not in its scope of services.
+3. Clarify if any required inputs to perform the task are missing. 
+   In case of capital call, data related to Fund Name, Purpose of notice, Capital Call Amount, Due Date, Partners to be excluded, Basis for Call amount allocation amount i.e., based on commitment% or custom allocation.
+4. Communicate to user if it encounters any issues like mentioned below.
+   a. Specified fund didn't exist in the investment firm.
+   b. Partners didn't exist in the fund.
+   c. call amount of one or all partners exceeds unfunded capital of the respective LP.
+5. Create notices in the draft state for users to review.
+6. Clarify with user if they want to create a new notice or modify existing notice in draft state whenever there are any notices in draft status.
+
+**Out of scope for capital call agent**
+1. Creation of notice in open status.
+2. Updates to notices in open status.
+3. Deletion of notices in any status. 
+
+**System requirements**
+1. Every message entered by users must be logged along with data points like user email, investment firm, message date with time stamp, agent response and user feedback (satisfactory or not satisfactory)
+2. Application must track the count of tokens and cost incurred on daily basis.
+3. Any prompts that request information outside the tenant must be responded with "Answer to your query is beyond my current scope. Please reach out fundadmin@qapita.com"
+4. Every response must provide an option to end user to confirm whether it is satisfactory or not.
+5. The chat interface must display messages belonged to the investment firm. If user switches from one firm to another in same login session, the interface can clear the history from UI.
+6. Application can clear the chat history whenever user switches the investment firm in same login or logs out and logs in again.
+
+**User Stories**
+1. As a fund admin, I need a capital call created in the application as per the instructions given in chat interface, 
+   so that I can review and approve the notice created.
+2. As a fund admin, I need to provide clarifications for any queries raised by agent, 
+   so that the agent can create the notice successfully.
+3. As a fund admin, I need to provide inputs to modify any capital call in draft status,
+   so that I can correct the prepared notices as per new instructions received from fund manager.
+4. As a gen AI service provider, I need to have complete track of how users are using the Gen AI solution, 
+   so that I can track the usage & cost incurred per tenant.
+5. As a gen AI service provider, I need to restrict the agent responses whenever the queries are outside the scope of agent,
+   so that I can ensure application doesn't respond to following raised by users.
+   a. irrelevant queries or,
+   b. queries related to PII data (like Bank and Contact info) or,
+   c. queries related to info outside the tenant or,
+   c. queries to corrupt the system.
+
+**Success Metrics**
+1. Usage Rate - Users used the agent / Total users on the platform.
+2. Satisfactory Response Rate - Responses marked as satisfactory by user / Total responses generated by system.
