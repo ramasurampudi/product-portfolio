@@ -1,0 +1,20 @@
+Document:  Capital Call Agent for Fund Admin product
+Document Type: Product Requirements Document
+Version: V1
+Author: Rama
+Stakeholders: Engineering, Business.
+Approvers: Business Team
+
+**Context**
+  The fund administration service industry in India caters many alternate investment firms (VC / PE / Hedge funds) that are present across the world. 
+  They operate in the onshore-offshore model, where the onshore team will manage the relations with the fund managers (aka clients) and the offshore team does most of the manaul operations work like preparing capital calls, books for financial and investor reporting.  
+  Since the industry deals with significantly high value of money and numbers, accuracy along with quick turn around time are non-negotiable. 
+  In order to make sure the work is highly accurate, the industry follows a process called preparer-reviewer. Also known as maker-checker or four-eye-review. 
+  A junior accountant will prepare the client deliverable (i.e., a capital call notice or financial statements) and a senior accountant will review before it is shared with client (i.e., fund manager).
+  In couple of cases, even the reviewer will not have access to the client, and they share deliverables with someone in Investor relations team, who takes care of all client communications.
+
+**Problem Statement**
+  Every fund accountant, irrespective of the role preparer or reviewer, handles atleast 5 - 10 funds depending upon the organziation.
+  The volume of work, the context switching and different systems from which data must be segregated are some of the reasons that causes confusion and leads to errors in preparation of client deliverable (i.e., capital call or financial statements)
+  We want to build an AI Agent that can help preparers and reviewers in the capital call notice preparation and reduce the time-to-share the same with the client.
+
